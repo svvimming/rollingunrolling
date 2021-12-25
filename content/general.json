@@ -1,0 +1,36 @@
+{
+  "navigation": [
+    {
+      "text": "home",
+      "action": "nuxt-link",
+      "url": "/"
+    },
+    {
+      "text": "portfolio",
+      "action": "nuxt-link",
+      "links": [
+        {
+          "text": "fuites x art souterrain",
+          "action": "scroll-to"
+        },
+        {
+          "text": "radio with tiny sounds",
+          "action": "scroll-to"
+        },
+        {
+          "text": "non-being ad nauseam",
+          "action": "scroll-to"
+        },
+        {
+          "text": "minor movements",
+          "action": "scroll-to"
+        }
+      ]
+    },
+    {
+      "text": "music",
+      "action": "nuxt-link",
+      "url": "/music"
+    }
+  ]
+}

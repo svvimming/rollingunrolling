@@ -1,0 +1,210 @@
+// ///////////////////////////////////////////////////////// Imports & Variables
+// -----------------------------------------------------------------------------
+@import 'normalize';
+@import 'grid/gridlex-2.7.1';
+
+$fontAssetPath: '~assets/fonts';
+
+/////////////////////////////////////////////////////////////////////// Spectral
+@font-face {
+  font-family: 'Spectral';
+  src: url('#{$fontAssetPath}/Spectral/Spectral-Light.ttf') format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Spectral';
+  src: url('#{$fontAssetPath}/Spectral/Spectral-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Spectral';
+  src: url('#{$fontAssetPath}/Spectral/Spectral-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Spectral';
+  src: url('#{$fontAssetPath}/Spectral/Spectral-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Spectral';
+  src: url('#{$fontAssetPath}/Spectral/Spectral-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Spectral';
+  src: url('#{$fontAssetPath}/Spectral/Spectral-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Spectral';
+  src: url('#{$fontAssetPath}/Spectral/Spectral-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+///////////////////////////////////////////////////////////////////////// Prompt
+@font-face {
+  font-family: 'Prompt';
+  src: url('#{$fontAssetPath}/Prompt/Prompt-Light.ttf') format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Prompt';
+  src: url('#{$fontAssetPath}/Prompt/Prompt-Regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Prompt';
+  src: url('#{$fontAssetPath}/Prompt/Prompt-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Prompt';
+  src: url('#{$fontAssetPath}/Prompt/Prompt-Medium.ttf') format('truetype');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Prompt';
+  src: url('#{$fontAssetPath}/Prompt/Prompt-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Prompt';
+  src: url('#{$fontAssetPath}/Prompt/Prompt-Bold.ttf') format('truetype');
+  font-weight: 700;
+}
+
+//////////////////////////////////////////////////////////////////////// Archivo
+@font-face {
+  font-family: 'Archivo';
+  src: url('#{$fontAssetPath}/Archivo/Archivo-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: 100 900;
+}
+
+@font-face {
+  font-family: 'Archivo';
+  src: url('#{$fontAssetPath}/Archivo/Archivo-VariableFont_wdth,wght.ttf') format('truetype');
+  font-weight: 100 900;
+}
+
+// /////////////////////////////////////////////////////////////// Fonts General
+// -----------------------------------------------------------------------------
+
+@mixin serif { font-family: 'Spectral'; }
+@mixin sanSerif { font-family: 'Prompt'; }
+
+// ///////////////////////////////////////////////////////////////////// General
+// -----------------------------------------------------------------------------
+
+html, body {
+  font-size: 16px;
+  background-color: $softPeach;
+  // background-color: $eunry;
+  color: $taupe;
+  // background-color: $eunry;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  ::-moz-selection { background: white; color: black; }
+  ::selection { background: white; color: black; }
+  @include mini {
+    line-height: 1.875rem; // 30pt
+  }
+  &.no-scroll {
+    overflow-y: hidden;
+  }
+  &.no-cursor {
+    cursor: none;
+  }
+  * {
+    box-sizing: border-box;
+    &:before,
+    &:after {
+      box-sizing: border-box;
+    }
+  }
+}
+
+a, button, ul {
+  background-color: transparent;
+  text-decoration: none;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+a, button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+}
+
+::-webkit-file-upload-button {
+  cursor: pointer;
+}
+
+// ///////////////////////////////////////////////////////////////// Nuxt & Grid
+// -----------------------------------------------------------------------------
+#__nuxt {
+  position: relative;
+  z-index: 2;
+}
+
+#__layout {
+  overflow: hidden;
+  .master-container {
+    position: relative;
+  }
+}
+
+.layout {
+  position: relative;
+  z-index: 100;
+}
+
+[class~="grid"],
+[class*="grid-"],
+[class*="grid_"] {
+  width: $containerWidth;
+  margin: 0 auto;
+  @include customMaxMQ ($containerWidth + 4rem) {
+    padding: 0 7%;
+    width: 100%;
+  }
+  &[class*="-noGutter"] {
+    margin: 0 auto;
+  }
+  &.full {
+    width: 100%;
+    padding: 0 0.5rem;
+    &.maxed {
+      max-width: 90rem;
+    }
+  }
+  &.no-padding {
+    padding: 0;
+  }
+  [class~="grid"],
+  [class*="grid-"],
+  [class*="grid_"] {
+    width: 100%;
+    padding: 0;
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "works": [
+    {
+      "title": "fuites x Art Souterrain",
+      "subtitle": "Art Souterrain, Creer Des Ponts",
+      "date": "October 27, 2021",
+      "description": "Live improvised performance built from tiny sounds and songs.",
+      "image": "/images/art-souterrain.jpeg"
+    },
+    {
+      "title": "Convalescense",
+      "subtitle": "Episode 7 of Tiny Sounds on Still.fm",
+      "date": "",
+      "description": "",
+      "image": "/images/convalescence101.jpg"
+    },
+    {
+      "title": "Non-Being Ad Nauseam",
+      "subtitle": "Écomusée du fier monde, Art Matters Festival, Montréal.",
+      "date": "March 2020",
+      "description": "Improvised video, sound and dance performance.",
+      "image": "/images/swimming-pool2.jpeg"
+    },
+    {
+      "title": "Copenhagen Minor Movement with the Senselab",
+      "subtitle": "Centre of Psychiatry and AIR Lab, IT University, Copenhagen",
+      "date": "September 2019",
+      "description": "Collective improvised soundscape & composition",
+      "image": "/images/mimo.png"
+    }
+  ]
+}
