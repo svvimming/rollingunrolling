@@ -1,28 +1,22 @@
 <template>
   <div class="portfolio-card">
-    <div :class="gridClasses">
-      <div
-        class="col-5"
-        :data-push-left="getOffset(reversed)"
-        :data-push-right="getOffset(!reversed)">
-        <div class="title">
-          {{ work.title }}
-        </div>
-        <div class="subtitle">
-          {{ work.subtitle }}
-        </div>
-        <div class="date">
-          {{ work.date }}
-        </div>
-        <div class="description">
-          {{ work.description }}
-        </div>
+    <div class="grid">
+      <div class="col-12 title">
+        {{ work.title }}
       </div>
+      <div class="col-7 subtitle" data-push-left="off-1">
+        {{ work.subtitle }}
+      </div>
+      <div class="col-4 date" data-push-left="off-2">
+        {{ work.date }}
+      </div>
+      <div class="col-12 description" v-html="work.description"></div>
       <div
-        class="col-5 image-container"
-        :data-push-left="getOffset(!reversed)"
-        :data-push-right="getOffset(reversed)">
-        <img :src="work.image" class="image">
+        v-for="path in work.images"
+        class="col-12">
+        <div class="image-container">
+          <img :src="path" class="image">
+        </div>
       </div>
     </div>
   </div>
@@ -72,6 +66,20 @@ export default {
   padding: 10rem 0;
   font-family: 'Spectral';
 }
+
+.title,
+.subtitle {
+  margin-bottom: 0.5rem;
+}
+
+.date,
+.description {
+  margin-bottom: 1.5rem;
+  a {
+    color: #FF7F50;
+  }
+}
+
 .title {
   font-size: 28px;
   letter-spacing: 0em;
@@ -79,16 +87,18 @@ export default {
   font-style: italic;
 }
 
+.date,
 .subtitle {
   font-size: 14px;
 }
 
 .description {
-
+  margin-bottom: 1.5rem;
 }
 
 .image-container {
   position: relative;
+  width: 100%;
 }
 
 .flower {

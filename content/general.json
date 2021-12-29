@@ -6,8 +6,9 @@
       "url": "/"
     },
     {
-      "text": "portfolio",
+      "text": "works",
       "action": "nuxt-link",
+      "url": "/works",
       "links": [
         {
           "text": "fuites x art souterrain",

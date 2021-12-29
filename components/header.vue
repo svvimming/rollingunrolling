@@ -20,7 +20,13 @@
           v-for="item in navigation"
           :key="item.text"
           class="nav-item">
-          {{ item.text }}
+
+          <component
+            :is="item.action"
+            :to="item.url">
+            {{ item.text }}
+          </component>
+
           <template v-if="item.hasOwnProperty('links')">
             <div
               v-for="link in item.links"
@@ -29,6 +35,7 @@
               {{link.text}}
             </div>
           </template>
+
         </div>
       </nav>
     </div>
@@ -84,6 +91,7 @@ export default {
   position: fixed;
   width: 20rem;
   height: 100vh;
+  z-index: 100;
 }
 
 .nav-container {
@@ -141,6 +149,26 @@ export default {
   font-weight: 600;
   font-size: 14px;
   color: $comet;
+  a {
+    color: $comet;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      opacity: 0;
+      transition: 250ms ease;
+      background: linear-gradient(90deg, rgba($comet , 0) 0%, $comet 33%, $comet 66%, rgba($comet, 0) 100%);
+    }
+    &:hover {
+      &:after {
+        opacity: 0.5;
+      }
+    }
+  }
 }
 
 .nav-item {
