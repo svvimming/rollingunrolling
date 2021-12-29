@@ -1,8 +1,5 @@
 export default {
   target: 'static',
-  router: {
-    base: process.env.DEPLOY_ENV === 'FUITES' ? '/nuxt_app_rur/' : '/'
-  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'rollingunrolling',
