@@ -2,7 +2,7 @@ const routerBase =
   process.env.DEPLOY_ENV === "FUITES"
     ? {
         router: {
-          base: "/rollingunrolling/"
+          base: "/nuxt_app_rur/"
         }
       }
     : {};

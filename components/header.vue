@@ -140,7 +140,7 @@ export default {
   letter-spacing: -0.05em;
   font-weight: 600;
   font-size: 14px;
-  color: $taupe;
+  color: #353027;
 
 
 }
