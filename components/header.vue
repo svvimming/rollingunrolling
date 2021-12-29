@@ -103,7 +103,7 @@ export default {
     top: -1rem;
     width: 17rem;
     height: 17rem;
-    background-color: #cbe8ff;
+    background-color: $mossgreen;
     border-radius: 50%;
     z-index: -1;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05), 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -140,9 +140,7 @@ export default {
   letter-spacing: -0.05em;
   font-weight: 600;
   font-size: 14px;
-  color: $taupe;
-
-
+  color: $comet;
 }
 
 .nav-item {

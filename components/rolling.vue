@@ -37,7 +37,7 @@ const generatePath = (instance, next) => {
         fontFamily: 'Prompt',
         fontWeight: 700,
         fontSize: 20,
-        fillColor: '#353027',
+        fillColor: instance.textColor,
         justification: 'center'
       }
     });
@@ -79,6 +79,14 @@ const animate = (instance, letters, offsets, path, totalOffsets) => {
 // ====================================================================== Export
 export default {
   name: 'Rolling',
+
+  props: {
+    textColor: {
+      type: String,
+      required: false,
+      default: '#56576C'
+    }
+  },
 
   data () {
     return {
