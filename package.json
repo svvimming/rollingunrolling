@@ -6,7 +6,8 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "generate:fuites": "DEPLOY_ENV=FUITES nuxt generate --fail-on-page-error"
   },
   "dependencies": {
     "core-js": "^3.19.3",

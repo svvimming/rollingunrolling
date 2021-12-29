@@ -88,19 +88,6 @@ $fontAssetPath: '~assets/fonts';
   font-weight: 700;
 }
 
-//////////////////////////////////////////////////////////////////////// Archivo
-@font-face {
-  font-family: 'Archivo';
-  src: url('#{$fontAssetPath}/Archivo/Archivo-Italic-VariableFont_wdth,wght.ttf') format('truetype');
-  font-weight: 100 900;
-}
-
-@font-face {
-  font-family: 'Archivo';
-  src: url('#{$fontAssetPath}/Archivo/Archivo-VariableFont_wdth,wght.ttf') format('truetype');
-  font-weight: 100 900;
-}
-
 // /////////////////////////////////////////////////////////////// Fonts General
 // -----------------------------------------------------------------------------
 
