@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-container">
     <Header />
     <Nuxt />
   </div>
@@ -16,3 +16,9 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.main-container {
+  position: relative;
+}
+</style>
