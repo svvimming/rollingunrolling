@@ -109,9 +109,6 @@ html, body {
   scroll-behavior: smooth;
   ::-moz-selection { background: $coral; color: $manz; }
   ::selection { background: $coral; color: $manz; }
-  @include mini {
-    line-height: 1.875rem; // 30pt
-  }
   &.no-scroll {
     overflow-y: hidden;
   }

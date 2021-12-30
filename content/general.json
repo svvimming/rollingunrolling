@@ -1,7 +1,22 @@
 {
+  "home": {
+    "image": "/images/uspz.jpg",
+    "contact": [
+      {
+        "text": "ig: @rollingunrolling",
+        "action": "a",
+        "url": "https://www.instagram.com/rollingunrolling/"
+      },
+      {
+        "text": "email",
+        "action": "a",
+        "url": "mailto:contact@fuit.es"
+      }
+    ]
+  },
   "navigation": [
     {
-      "text": "hola",
+      "text": "home",
       "action": "nuxt-link",
       "url": "/"
     },

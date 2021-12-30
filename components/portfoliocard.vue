@@ -13,7 +13,7 @@
       <div class="col-12 description" v-html="work.description"></div>
       <div
         v-for="path in work.images"
-        class="col-12">
+        :class="work.hasOwnProperty('orientation') ? work.orientation : 'col-12'">
         <div class="image-container">
           <img :src="path" class="image">
         </div>
@@ -32,26 +32,6 @@ export default {
       type: Object,
       required: true,
       default: {}
-    },
-    reversed: {
-      type: Boolean,
-      required: false,
-      default: false
-    }
-  },
-
-  computed: {
-    gridClasses () {
-      return this.reversed ? 'grid-reverse-middle' : 'grid-middle'
-    }
-  },
-
-  methods: {
-    getOffset (val) {
-      if (val) {
-        return 'off-1'
-      }
-      return 'off-0'
     }
   }
 }
@@ -99,17 +79,5 @@ export default {
 .image-container {
   position: relative;
   width: 100%;
-}
-
-.flower {
-  position: absolute;
-  top: -50%;
-  left: -25%;
-  width: 150%;
-  height: 200%;
-  background-image: url('/images/flower.png');
-  background-size: 100%;
-  background-repeat: no-repeat;
-  z-index: -1;
 }
 </style>

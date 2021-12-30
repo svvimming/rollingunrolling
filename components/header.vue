@@ -23,7 +23,8 @@
 
           <component
             :is="item.action"
-            :to="item.url">
+            :to="item.url"
+            :href="item.url">
             {{ item.text }}
           </component>
 
@@ -92,6 +93,9 @@ export default {
   width: 20rem;
   height: 100vh;
   z-index: 100;
+  @include mini {
+    position: absolute;
+  }
 }
 
 .nav-container {
@@ -135,6 +139,7 @@ export default {
 
 .background-character {
   display: inline-block;
+  opacity: 0.1;
   // filter: drop-shadow(0 0 0.75rem black);
 }
 

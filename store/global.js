@@ -2,6 +2,7 @@
 // -----------------------------------------------------------------------------
 import GeneralData from '@/content/general.json'
 import PortfolioData from '@/content/portfolio.json'
+import MusicData from '@/content/music.json'
 
 // /////////////////////////////////////////////////////////////////////// State
 // -----------------------------------------------------------------------------
@@ -29,6 +30,7 @@ const actions = {
     switch (key) {
       case 'general': data = GeneralData; break
       case 'portfolio': data = PortfolioData; break
+      case 'music': data = MusicData; break
       default : data = payload.data; break
     }
     if (data) {
