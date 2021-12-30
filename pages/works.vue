@@ -14,6 +14,8 @@
       </div>
     </div>
 
+    <Over id="works_scribble-2"/>
+
   </div>
 </template>
 
@@ -22,6 +24,7 @@
 import { mapGetters } from 'vuex'
 
 import Scribble from '@/assets/svgs/scribble'
+import Over from '@/assets/svgs/long'
 import PortfolioCard from '@/components/portfoliocard'
 // ====================================================================== Export
 export default {
@@ -29,7 +32,8 @@ export default {
 
   components: {
     PortfolioCard,
-    Scribble
+    Scribble,
+    Over
   },
 
   async fetch ({ store, $content }) {
@@ -57,15 +61,25 @@ export default {
   }
 }
 
-::v-deep #works_scribble-1 {
+::v-deep #works_scribble-1,
+::v-deep #works_scribble-2 {
   position: absolute;
-  top: -12rem;
-  left: 0rem;
   z-index: -1;
   opacity: 0.33;
-  transform: scaleX(1.02);
   path {
     fill: $comet;
   }
+}
+
+::v-deep #works_scribble-1 {
+  top: -12rem;
+  left: 0rem;
+  transform: scaleX(1.02);
+}
+
+::v-deep #works_scribble-2 {
+  bottom: 0rem;
+  right: 0rem;
+  transform: scaleX(-1.25);
 }
 </style>

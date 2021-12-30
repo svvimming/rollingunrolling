@@ -22,6 +22,9 @@
       </div>
     </div>
 
+    <Spaz id="home-spaz" />
+    <Swirl id="home-swirl" />
+
   </div>
 </template>
 
@@ -29,15 +32,17 @@
 // ====================================================================== Import
 import { mapGetters } from 'vuex'
 
-import Scribble from '@/assets/svgs/scribble'
 import PortfolioCard from '@/components/portfoliocard'
+import Spaz from '@/assets/svgs/spaz'
+import Swirl from '@/assets/svgs/swirl'
 // ====================================================================== Export
 export default {
   name: 'IndexPage',
 
   components: {
     PortfolioCard,
-    Scribble
+    Spaz,
+    Swirl
   },
 
   async fetch ({ store, $content }) {
@@ -63,6 +68,7 @@ export default {
 // ///////////////////////////////////////////////////////////////////// General
 .page-index {
   position: relative;
+  // padding-bottom: 10rem;
   @include mini {
     padding-bottom: 18rem;
   }
@@ -126,6 +132,26 @@ export default {
       }
     }
   }
+}
+
+::v-deep #home-spaz,
+::v-deep #home-swirl {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.4;
+  path {
+    fill: $eunry;
+  }
+}
+
+::v-deep #home-spaz {
+  bottom: calc(50% - 10rem);
+  left: 0;
+}
+
+::v-deep #home-swirl {
+  bottom: calc(50% - 15rem);
+  left: calc(50% - 6rem);
 }
 
 </style>
