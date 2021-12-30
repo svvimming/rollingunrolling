@@ -13,9 +13,22 @@
       <div class="col-12 description" v-html="work.description"></div>
       <div
         v-for="path in work.images"
+        :key="path"
         :class="work.hasOwnProperty('orientation') ? work.orientation : 'col-12'">
         <div class="image-container">
           <img :src="path" class="image">
+        </div>
+      </div>
+      <div
+        v-if="work.hasOwnProperty('videos')"
+        class="col-12">
+        <div
+          v-for="video in work.videos"
+          :key="video"
+          class="video-container">
+          <video controls>
+            <source :src="video" type="video/mp4">
+          </video>
         </div>
       </div>
     </div>
@@ -79,5 +92,16 @@ export default {
 .image-container {
   position: relative;
   width: 100%;
+}
+
+.video-container {
+  width: 100%;
+  margin: 1rem 0;
+  video {
+    width: inherit;
+  }
+  &:first-child {
+    margin-top: 3rem;
+  }
 }
 </style>
